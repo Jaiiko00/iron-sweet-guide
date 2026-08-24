@@ -3,7 +3,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ingredientOptions, recipes, weeklyPlan, recipeById, type Recipe } from "@/lib/recipes";
 import weeklyImg from "@/assets/weekly.jpg";
+import stewImg from "@/assets/recipe-stew.jpg";
+import marketImg from "@/assets/market-iron.jpg";
+import cookingImg from "@/assets/cooking-family.jpg";
+import heroFoods from "@/assets/hero-foods.jpg";
 import { Reveal } from "@/components/Reveal";
+import { Tilt3D } from "@/components/Tilt3D";
 
 export const Route = createFileRoute("/calendario")({
   head: () => ({
