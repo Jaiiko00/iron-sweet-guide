@@ -99,7 +99,7 @@ function Mitos() {
       <section className="border-b border-border/70 bg-gradient-to-br from-secondary/60 to-transparent">
         <div className="mx-auto max-w-6xl animate-fade-up px-5 py-16">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Sección 5</p>
-          <h1 className="mt-3 font-display text-4xl font-semibold aurora-text">
+          <h1 className="mt-3 font-display text-4xl font-semibold text-3d aurora-text">
             Mitos y verdades
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
@@ -121,7 +121,7 @@ function Mitos() {
             <button
               key={k}
               onClick={() => setFiltro(k)}
-              className={`rounded-full border px-4 py-2 text-sm transition-all duration-300 hover:-translate-y-0.5 ${
+              className={`nav-3d rounded-full border px-4 py-2 text-sm ${
                 filtro === k
                   ? "border-transparent gradient-iron text-primary-foreground shadow-[var(--shadow-glow)]"
                   : "border-border bg-card/70 text-muted-foreground hover:bg-secondary"
@@ -138,7 +138,7 @@ function Mitos() {
             const open = abierto === idx;
             return (
               <Reveal key={item.afirmacion} delay={i * 60}>
-                <article className="glass-card overflow-hidden">
+                <article className="glass-card panel-3d overflow-hidden">
                   <button
                     onClick={() => setAbierto(open ? null : idx)}
                     className="flex w-full items-center gap-4 p-5 text-left transition-colors hover:bg-primary/5"

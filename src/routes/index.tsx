@@ -107,7 +107,7 @@ function Index() {
             <HeartLogo className="h-4 w-4" />
             Sección 1 · Salud con hierro
           </span>
-          <h1 className="mt-5 max-w-3xl animate-fade-up font-display text-5xl font-semibold leading-[1.05] [animation-delay:100ms] sm:text-6xl">
+          <h1 className="mt-5 max-w-3xl animate-fade-up text-3d font-display text-5xl font-semibold leading-[1.05] [animation-delay:100ms] sm:text-6xl">
             Entiende la anemia y{" "}
             <span className="aurora-text">recupera tu energía</span>
           </h1>
@@ -116,10 +116,10 @@ function Index() {
             recetario interactivo, el mapa de centros de salud y mitos y verdades.
           </p>
           <div className="mt-8 flex animate-fade-up flex-wrap gap-3 [animation-delay:300ms]">
-            <Button asChild size="lg" className="shine gradient-iron text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105">
+            <Button asChild size="lg" className="btn-3d shine gradient-iron text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105">
               <Link to="/medidor">Medir mi riesgo</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="glow-border transition-transform hover:scale-105">
+            <Button asChild size="lg" variant="outline" className="btn-3d glow-border">
               <Link to="/calendario">Abrir el recetario</Link>
             </Button>
           </div>
@@ -163,7 +163,7 @@ function Index() {
                 ["12 g/dL", "hemoglobina mínima habitual en mujeres adultas"],
                 ["13 g/dL", "hemoglobina mínima habitual en hombres adultos"],
               ].map(([n, d]) => (
-                <div key={n} className="rounded-xl glass-card p-4 transition-transform duration-300 hover:-translate-y-1">
+                <div key={n} className="rounded-xl glass-card card-3d p-4">
                   <dt className="font-display text-2xl font-semibold text-primary">{n}</dt>
                   <dd className="mt-1 text-sm text-muted-foreground">{d}</dd>
                 </div>
@@ -216,7 +216,7 @@ function Index() {
               as="article"
               key={t.t}
               delay={i * 80}
-              className="rounded-xl border-l-4 border-primary bg-card/80 p-5 shadow-[var(--shadow-card)] transition-transform duration-300 hover:translate-x-1"
+              className="rounded-xl border-l-4 border-primary bg-card/80 p-5 shadow-[var(--shadow-card)] card-3d"
             >
               <h3 className="font-display text-xl font-semibold">Anemia {t.t.toLowerCase()}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{t.d}</p>

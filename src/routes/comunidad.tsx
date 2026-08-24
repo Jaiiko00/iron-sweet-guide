@@ -110,7 +110,7 @@ function Comunidad() {
             </span>
             Sección 6
           </span>
-          <h1 className="mt-4 font-display text-4xl font-semibold aurora-text md:text-5xl">
+          <h1 className="mt-4 font-display text-4xl font-semibold text-3d aurora-text md:text-5xl">
             Comunidad y debate
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
