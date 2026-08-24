@@ -119,7 +119,7 @@ function Recetario() {
                   key={ing}
                   onClick={() => toggle(ing)}
                   aria-pressed={on}
-                  className={`rounded-full border px-3.5 py-1.5 text-sm capitalize transition-all duration-300 hover:-translate-y-0.5 ${
+                  className={`nav-3d rounded-full border px-3.5 py-1.5 text-sm capitalize ${
                     on
                       ? "border-transparent gradient-iron text-primary-foreground shadow-[var(--shadow-glow)]"
                       : "border-border bg-card/70 text-muted-foreground hover:bg-secondary"
@@ -265,7 +265,7 @@ function Recetario() {
               <button
                 key={d.day}
                 onClick={() => setDia(i)}
-                className={`rounded-full border px-4 py-2 text-sm transition-all duration-300 hover:-translate-y-0.5 ${
+                className={`nav-3d rounded-full border px-4 py-2 text-sm ${
                   i === dia
                     ? "border-transparent gradient-iron text-primary-foreground shadow-[var(--shadow-glow)]"
                     : "border-border bg-card/70 text-muted-foreground hover:bg-secondary"

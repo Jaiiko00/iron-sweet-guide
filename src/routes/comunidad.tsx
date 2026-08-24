@@ -140,7 +140,7 @@ function Comunidad() {
               <Button
                 onClick={publicar}
                 disabled={text.trim().length < 3}
-                className="shine rounded-full transition-transform hover:scale-105"
+                className="btn-3d shine rounded-full"
               >
                 Publicar comentario
               </Button>

@@ -125,7 +125,7 @@ function Mapa() {
             <button
               key={centro.nombre}
               onClick={() => setActivo(i)}
-              className={`w-full rounded-xl border p-4 text-left transition-all duration-300 hover:-translate-y-0.5 ${
+              className={`nav-3d w-full rounded-xl border p-4 text-left ${
                 i === activo
                   ? "border-primary/50 bg-primary/10 shadow-[var(--shadow-glow)]"
                   : "border-border bg-card/70 hover:bg-secondary"

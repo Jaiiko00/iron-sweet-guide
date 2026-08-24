@@ -128,7 +128,7 @@ function Medidor() {
           <ul className="mt-5 space-y-3">
             {preguntas.map((p, i) => (
               <li key={p} style={{ animationDelay: `${i * 50}ms` }} className="animate-fade-up">
-                <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-card/60 p-3 text-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary/60">
+                <label className="nav-3d flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-card/60 p-3 text-sm hover:bg-secondary/60">
                   <input
                     type="checkbox"
                     className="mt-0.5 h-4 w-4 accent-[var(--primary)]"

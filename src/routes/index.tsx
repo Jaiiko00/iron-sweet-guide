@@ -116,7 +116,7 @@ function Index() {
             recetario interactivo, el mapa de centros de salud y mitos y verdades.
           </p>
           <div className="mt-8 flex animate-fade-up flex-wrap gap-3 [animation-delay:300ms]">
-            <Button asChild size="lg" className="btn-3d shine gradient-iron text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105">
+            <Button asChild size="lg" className="btn-3d shine gradient-iron text-primary-foreground shadow-[var(--shadow-glow)]">
               <Link to="/medidor">Medir mi riesgo</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="btn-3d glow-border">
