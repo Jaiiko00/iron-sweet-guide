@@ -320,6 +320,54 @@
   }
 }
 
+/* Texto con relieve */
+@utility text-3d {
+  text-shadow:
+    0 1px 0 color-mix(in oklab, var(--foreground) 22%, transparent),
+    0 3px 8px oklch(0.4 0.15 22 / 0.28);
+}
+
+/* Píldoras / enlaces con empuje 3D */
+@utility nav-3d {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.2s ease;
+  &:hover {
+    transform: perspective(600px) translateY(-2px) rotateX(12deg);
+    box-shadow: 0 8px 16px -10px oklch(0.4 0.15 22 / 0.6);
+  }
+  &:active {
+    transform: perspective(600px) translateY(1px) rotateX(0deg);
+  }
+}
+
+/* Iconos y logos flotando en 3D */
+@utility icon-3d {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: drop-shadow(0 8px 12px oklch(0.4 0.15 22 / 0.35));
+  &:hover {
+    transform: perspective(700px) rotateY(18deg) rotateX(-8deg) scale(1.12);
+  }
+}
+
+/* Paneles con profundidad marcada */
+@utility panel-3d {
+  transform-style: preserve-3d;
+  box-shadow:
+    0 1px 0 color-mix(in oklab, white 60%, transparent) inset,
+    0 22px 40px -26px oklch(0.4 0.15 22 / 0.55);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+  &:hover {
+    transform: perspective(1100px) rotateX(3deg) translateY(-5px);
+    box-shadow:
+      0 1px 0 color-mix(in oklab, white 70%, transparent) inset,
+      0 32px 60px -28px oklch(0.4 0.15 22 / 0.6);
+  }
+}
+
 
 @utility hover-lift {
   transition:
