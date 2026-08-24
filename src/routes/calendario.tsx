@@ -154,7 +154,7 @@ function Recetario() {
               Solo recetas económicas
             </label>
             {selected.length > 0 && (
-              <Button variant="outline" size="sm" onClick={() => setSelected([])}>
+              <Button variant="outline" size="sm" className="btn-3d" onClick={() => setSelected([])}>
                 Limpiar ingredientes
               </Button>
             )}
@@ -182,7 +182,7 @@ function Recetario() {
                 <article
                   key={r.id}
                   style={{ animationDelay: `${i * 50}ms` }}
-                  className="flex animate-fade-up flex-col glass-card p-5 transition-transform duration-300 hover:-translate-y-1"
+                  className="flex animate-fade-up flex-col glass-card card-3d p-5"
                 >
                   <div className="flex items-center justify-between gap-2 text-xs">
                     <span className="rounded-full bg-primary/10 px-2.5 py-1 font-medium text-primary">
@@ -238,10 +238,11 @@ function Recetario() {
                       size="sm"
                       variant="outline"
                       onClick={() => setAbierta(abierta === r.id ? null : r.id)}
+                      className="btn-3d"
                     >
                       {abierta === r.id ? "Ocultar pasos" : "Ver preparación"}
                     </Button>
-                    <Button size="sm" asChild>
+                    <Button size="sm" asChild className="btn-3d">
                       <a href={r.video} target="_blank" rel="noopener noreferrer">
                         Video
                       </a>
@@ -279,12 +280,12 @@ function Recetario() {
             {(["desayuno", "almuerzo", "cena"] as const).map((slot) => {
               const r = recipeById(plan[slot]);
               return (
-                <article key={slot} className="glass-card p-5">
+                <article key={slot} className="glass-card card-3d p-5">
                   <p className="text-xs uppercase tracking-[0.2em] text-primary">{slot}</p>
                   <h3 className="mt-2 font-display text-lg font-semibold">{r.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{r.description}</p>
                   <p className="mt-3 text-sm font-medium">{r.iron}</p>
-                  <Button size="sm" variant="outline" asChild className="mt-4">
+                  <Button size="sm" variant="outline" asChild className="btn-3d mt-4">
                     <a href={r.video} target="_blank" rel="noopener noreferrer">
                       Ver receta
                     </a>
