@@ -7,10 +7,16 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { AuthProvider, useAuth } from "../lib/auth";
+import { LoginScreen } from "../components/LoginScreen";
+import { SiteHeader, SiteFooter } from "../components/SiteHeader";
+import { AppBackground } from "../components/AppBackground";
+import { ChatBot } from "../components/ChatBot";
+import { LoadingScreen } from "../components/LoadingScreen";
 
 function NotFoundComponent() {
   return (
@@ -77,11 +83,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "NutriHierro — Salud, hierro y anemia" },
+      {
+        name: "description",
+        content:
+          "NutriHierro: información sobre la anemia, medidor de riesgo y calendario semanal de comidas ricas en hierro.",
+      },
+      { property: "og:title", content: "NutriHierro" },
+      {
+        property: "og:description",
+        content: "Aprende sobre la anemia, mide tu riesgo y come con hierro toda la semana.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
@@ -91,7 +103,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -119,8 +137,48 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <AuthGate />
+      </AuthProvider>
+    </QueryClientProvider>
+  );
+}
+
+function AuthGate() {
+  const { user, ready } = useAuth();
+  const [booting, setBooting] = useState(false);
+  const [booted, setBooted] = useState(false);
+
+  useEffect(() => {
+    if (!user || booted) return;
+    setBooting(true);
+    const id = setTimeout(() => {
+      setBooting(false);
+      setBooted(true);
+    }, 4000);
+    return () => clearTimeout(id);
+  }, [user, booted]);
+
+  if (!ready) {
+    return <div className="min-h-screen bg-background" />;
+  }
+
+  if (!user) {
+    return <LoginScreen />;
+  }
+
+  if (booting) {
+    return <LoadingScreen name={user} />;
+  }
+
+  return (
+    <div className="min-h-screen bg-background font-sans">
+      <AppBackground />
+      <SiteHeader />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
-    </QueryClientProvider>
+      <SiteFooter />
+      <ChatBot />
+    </div>
   );
 }
