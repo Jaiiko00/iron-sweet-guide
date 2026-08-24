@@ -138,7 +138,7 @@ function Mapa() {
           ))}
         </Reveal>
 
-        <Reveal className="glass-card overflow-hidden">
+        <Reveal className="glass-card panel-3d overflow-hidden">
           <iframe
             key={c.nombre}
             title={`Mapa de ${c.nombre}`}
@@ -168,7 +168,7 @@ function Mapa() {
                 </dd>
               </div>
             </dl>
-            <Button asChild className="mt-6 transition-transform hover:scale-105">
+            <Button asChild className="btn-3d mt-6">
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${c.lat},${c.lng}`}
                 target="_blank"

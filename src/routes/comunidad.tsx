@@ -153,7 +153,7 @@ function Comunidad() {
         {comments.map((c, i) => (
           <Reveal key={c.id} delay={i * 60}>
             <Tilt3D max={7} className="rounded-3xl">
-              <article className="glass-card glow-border p-5">
+              <article className="glass-card glow-border panel-3d p-5">
                 <div className="flex items-center gap-3">
                   <span className="flex h-10 w-10 items-center justify-center rounded-full gradient-iron font-semibold text-primary-foreground shadow-[var(--shadow-glow)]">
                     {c.author.charAt(0).toUpperCase()}
