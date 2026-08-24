@@ -69,9 +69,9 @@ function Recetario() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/30" />
         <div className="relative mx-auto max-w-6xl animate-fade-up px-5 py-20">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Sección 3</p>
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Recetario</p>
           <h1 className="mt-3 font-display text-4xl font-semibold aurora-text">
-            Recetario interactivo «Combate la Anemia»
+            Recetario interactivo para combatir la anemia
           </h1>
           <p className="mt-4 max-w-xl text-muted-foreground">
             Marca lo que tienes en casa y el filtro inteligente te arma al instante recetas
@@ -80,6 +80,30 @@ function Recetario() {
           </p>
         </div>
       </section>
+
+      <section className="mx-auto max-w-6xl px-5 pt-12">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            [stewImg, "Guiso de lentejas con hígado, espinaca y limón"],
+            [marketImg, "Puesto de mercado con menestras, verduras verdes y cítricos"],
+            [cookingImg, "Familia cocinando junta una comida rica en hierro"],
+            [heroFoods, "Alimentos ricos en hierro sobre una mesa"],
+          ].map(([src, alt], i) => (
+            <Tilt3D key={alt} max={10} className="rounded-2xl">
+              <img
+                src={src}
+                alt={alt}
+                width={1200}
+                height={800}
+                loading="lazy"
+                style={{ animationDelay: `${i * 80}ms` }}
+                className="h-44 w-full animate-fade-up rounded-2xl border border-border object-cover shadow-[var(--shadow-card)]"
+              />
+            </Tilt3D>
+          ))}
+        </div>
+      </section>
+
 
       <section className="mx-auto max-w-6xl px-5 py-14">
         <Reveal className="glass-card p-6">
