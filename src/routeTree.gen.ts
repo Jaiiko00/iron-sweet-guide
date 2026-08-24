@@ -10,33 +10,91 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CalendarioRouteImport } from './routes/calendario'
+import { Route as ComunidadRouteImport } from './routes/comunidad'
+import { Route as MapaRouteImport } from './routes/mapa'
+import { Route as MedidorRouteImport } from './routes/medidor'
+import { Route as MitosRouteImport } from './routes/mitos'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CalendarioRoute = CalendarioRouteImport.update({
+  id: '/calendario',
+  path: '/calendario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComunidadRoute = ComunidadRouteImport.update({
+  id: '/comunidad',
+  path: '/comunidad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapaRoute = MapaRouteImport.update({
+  id: '/mapa',
+  path: '/mapa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MedidorRoute = MedidorRouteImport.update({
+  id: '/medidor',
+  path: '/medidor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MitosRoute = MitosRouteImport.update({
+  id: '/mitos',
+  path: '/mitos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/calendario': typeof CalendarioRoute
+  '/comunidad': typeof ComunidadRoute
+  '/mapa': typeof MapaRoute
+  '/medidor': typeof MedidorRoute
+  '/mitos': typeof MitosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/calendario': typeof CalendarioRoute
+  '/comunidad': typeof ComunidadRoute
+  '/mapa': typeof MapaRoute
+  '/medidor': typeof MedidorRoute
+  '/mitos': typeof MitosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/calendario': typeof CalendarioRoute
+  '/comunidad': typeof ComunidadRoute
+  '/mapa': typeof MapaRoute
+  '/medidor': typeof MedidorRoute
+  '/mitos': typeof MitosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/calendario' | '/comunidad' | '/mapa' | '/medidor' | '/mitos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/calendario' | '/comunidad' | '/mapa' | '/medidor' | '/mitos'
+  id:
+    | '__root__'
+    | '/'
+    | '/calendario'
+    | '/comunidad'
+    | '/mapa'
+    | '/medidor'
+    | '/mitos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CalendarioRoute: typeof CalendarioRoute
+  ComunidadRoute: typeof ComunidadRoute
+  MapaRoute: typeof MapaRoute
+  MedidorRoute: typeof MedidorRoute
+  MitosRoute: typeof MitosRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +106,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/calendario': {
+      id: '/calendario'
+      path: '/calendario'
+      fullPath: '/calendario'
+      preLoaderRoute: typeof CalendarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comunidad': {
+      id: '/comunidad'
+      path: '/comunidad'
+      fullPath: '/comunidad'
+      preLoaderRoute: typeof ComunidadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mapa': {
+      id: '/mapa'
+      path: '/mapa'
+      fullPath: '/mapa'
+      preLoaderRoute: typeof MapaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/medidor': {
+      id: '/medidor'
+      path: '/medidor'
+      fullPath: '/medidor'
+      preLoaderRoute: typeof MedidorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mitos': {
+      id: '/mitos'
+      path: '/mitos'
+      fullPath: '/mitos'
+      preLoaderRoute: typeof MitosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CalendarioRoute: CalendarioRoute,
+  ComunidadRoute: ComunidadRoute,
+  MapaRoute: MapaRoute,
+  MedidorRoute: MedidorRoute,
+  MitosRoute: MitosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
