@@ -5,6 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import testImg from "@/assets/test.jpg";
+import hbTestImg from "@/assets/hb-test.jpg";
+import labImg from "@/assets/lab-tubes.jpg";
+import bloodImg from "@/assets/blood-cells.jpg";
+import { Tilt3D } from "@/components/Tilt3D";
 import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/medidor")({
@@ -99,6 +103,7 @@ function Medidor() {
               de salud pueden dar un diagnóstico.
             </p>
           </div>
+          <Tilt3D max={10} className="rounded-2xl">
           <img
             src={testImg}
             alt="Profesional de salud midiendo la hemoglobina de una paciente"
@@ -107,6 +112,7 @@ function Medidor() {
             loading="lazy"
             className="animate-scale-in rounded-2xl border border-border object-cover shadow-[var(--shadow-card)]"
           />
+          </Tilt3D>
         </div>
       </section>
 
@@ -152,13 +158,14 @@ function Medidor() {
           <div className="mt-6 flex gap-3">
             <Button
               type="submit"
-              className="gradient-iron text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
+              className="btn-3d gradient-iron text-primary-foreground"
             >
               Calcular mi riesgo
             </Button>
             <Button
               type="button"
               variant="outline"
+              className="btn-3d"
               onClick={() => {
                 setMarcadas(preguntas.map(() => false));
                 setHb("");
@@ -212,6 +219,28 @@ function Medidor() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-5 pb-4">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            [hbTestImg, "Prueba rápida de hemoglobina en el dedo"],
+            [labImg, "Tubos de muestra de sangre en el laboratorio"],
+            [bloodImg, "Glóbulos rojos vistos de cerca"],
+          ].map(([src, alt], i) => (
+            <Tilt3D key={alt} max={10} className="rounded-2xl">
+              <img
+                src={src}
+                alt={alt}
+                width={1200}
+                height={800}
+                loading="lazy"
+                style={{ animationDelay: `${i * 80}ms` }}
+                className="h-44 w-full animate-fade-up rounded-2xl border border-border object-cover shadow-[var(--shadow-card)]"
+              />
+            </Tilt3D>
+          ))}
+        </div>
+      </section>
+
       <section className="mx-auto max-w-6xl px-5 pb-8">
         <Reveal as="h2" className="font-display text-3xl font-semibold">
           Cómo se mide la anemia
@@ -226,7 +255,7 @@ function Medidor() {
               as="article"
               key={t}
               delay={i * 80}
-              className="rounded-xl glass-card p-5 transition-transform duration-300 hover:-translate-y-1"
+              className="rounded-xl glass-card card-3d p-5"
             >
               <h3 className="font-medium">{t}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{d}</p>

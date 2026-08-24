@@ -284,6 +284,43 @@
   }
 }
 
+/* Botones con relieve 3D */
+@utility btn-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  box-shadow:
+    0 6px 0 -1px color-mix(in oklab, var(--primary) 45%, black),
+    0 12px 22px -8px oklch(0.4 0.15 22 / 0.45);
+  transition:
+    transform 0.18s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.18s ease;
+  &:hover {
+    transform: translateY(-3px) rotateX(6deg);
+    box-shadow:
+      0 9px 0 -1px color-mix(in oklab, var(--primary) 45%, black),
+      0 18px 30px -10px oklch(0.4 0.15 22 / 0.5);
+  }
+  &:active {
+    transform: translateY(2px);
+    box-shadow:
+      0 2px 0 -1px color-mix(in oklab, var(--primary) 45%, black),
+      0 6px 14px -8px oklch(0.4 0.15 22 / 0.45);
+  }
+}
+
+/* Superficies con profundidad 3D al pasar el cursor */
+@utility card-3d {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease;
+  &:hover {
+    transform: perspective(900px) translateY(-6px) rotateX(4deg) rotateY(-3deg) scale(1.02);
+    box-shadow: 0 28px 50px -22px oklch(0.4 0.15 22 / 0.45);
+  }
+}
+
+
 @utility hover-lift {
   transition:
     transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),

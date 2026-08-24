@@ -3,7 +3,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ingredientOptions, recipes, weeklyPlan, recipeById, type Recipe } from "@/lib/recipes";
 import weeklyImg from "@/assets/weekly.jpg";
+import stewImg from "@/assets/recipe-stew.jpg";
+import marketImg from "@/assets/market-iron.jpg";
+import cookingImg from "@/assets/cooking-family.jpg";
+import heroFoods from "@/assets/hero-foods.jpg";
 import { Reveal } from "@/components/Reveal";
+import { Tilt3D } from "@/components/Tilt3D";
 
 export const Route = createFileRoute("/calendario")({
   head: () => ({
@@ -64,9 +69,9 @@ function Recetario() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/30" />
         <div className="relative mx-auto max-w-6xl animate-fade-up px-5 py-20">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Sección 3</p>
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Recetario</p>
           <h1 className="mt-3 font-display text-4xl font-semibold aurora-text">
-            Recetario interactivo «Combate la Anemia»
+            Recetario interactivo para combatir la anemia
           </h1>
           <p className="mt-4 max-w-xl text-muted-foreground">
             Marca lo que tienes en casa y el filtro inteligente te arma al instante recetas
@@ -75,6 +80,30 @@ function Recetario() {
           </p>
         </div>
       </section>
+
+      <section className="mx-auto max-w-6xl px-5 pt-12">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            [stewImg, "Guiso de lentejas con hígado, espinaca y limón"],
+            [marketImg, "Puesto de mercado con menestras, verduras verdes y cítricos"],
+            [cookingImg, "Familia cocinando junta una comida rica en hierro"],
+            [heroFoods, "Alimentos ricos en hierro sobre una mesa"],
+          ].map(([src, alt], i) => (
+            <Tilt3D key={alt} max={10} className="rounded-2xl">
+              <img
+                src={src}
+                alt={alt}
+                width={1200}
+                height={800}
+                loading="lazy"
+                style={{ animationDelay: `${i * 80}ms` }}
+                className="h-44 w-full animate-fade-up rounded-2xl border border-border object-cover shadow-[var(--shadow-card)]"
+              />
+            </Tilt3D>
+          ))}
+        </div>
+      </section>
+
 
       <section className="mx-auto max-w-6xl px-5 py-14">
         <Reveal className="glass-card p-6">
@@ -125,7 +154,7 @@ function Recetario() {
               Solo recetas económicas
             </label>
             {selected.length > 0 && (
-              <Button variant="outline" size="sm" onClick={() => setSelected([])}>
+              <Button variant="outline" size="sm" className="btn-3d" onClick={() => setSelected([])}>
                 Limpiar ingredientes
               </Button>
             )}
@@ -153,7 +182,7 @@ function Recetario() {
                 <article
                   key={r.id}
                   style={{ animationDelay: `${i * 50}ms` }}
-                  className="flex animate-fade-up flex-col glass-card p-5 transition-transform duration-300 hover:-translate-y-1"
+                  className="flex animate-fade-up flex-col glass-card card-3d p-5"
                 >
                   <div className="flex items-center justify-between gap-2 text-xs">
                     <span className="rounded-full bg-primary/10 px-2.5 py-1 font-medium text-primary">
@@ -209,10 +238,11 @@ function Recetario() {
                       size="sm"
                       variant="outline"
                       onClick={() => setAbierta(abierta === r.id ? null : r.id)}
+                      className="btn-3d"
                     >
                       {abierta === r.id ? "Ocultar pasos" : "Ver preparación"}
                     </Button>
-                    <Button size="sm" asChild>
+                    <Button size="sm" asChild className="btn-3d">
                       <a href={r.video} target="_blank" rel="noopener noreferrer">
                         Video
                       </a>
@@ -250,12 +280,12 @@ function Recetario() {
             {(["desayuno", "almuerzo", "cena"] as const).map((slot) => {
               const r = recipeById(plan[slot]);
               return (
-                <article key={slot} className="glass-card p-5">
+                <article key={slot} className="glass-card card-3d p-5">
                   <p className="text-xs uppercase tracking-[0.2em] text-primary">{slot}</p>
                   <h3 className="mt-2 font-display text-lg font-semibold">{r.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{r.description}</p>
                   <p className="mt-3 text-sm font-medium">{r.iron}</p>
-                  <Button size="sm" variant="outline" asChild className="mt-4">
+                  <Button size="sm" variant="outline" asChild className="btn-3d mt-4">
                     <a href={r.video} target="_blank" rel="noopener noreferrer">
                       Ver receta
                     </a>
