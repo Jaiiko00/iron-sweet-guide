@@ -108,7 +108,7 @@ function Mapa() {
       <section className="border-b border-border/70 bg-gradient-to-br from-secondary/60 to-transparent">
         <div className="mx-auto max-w-6xl animate-fade-up px-5 py-16">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Sección 4</p>
-          <h1 className="mt-3 font-display text-4xl font-semibold aurora-text">
+          <h1 className="mt-3 font-display text-4xl font-semibold text-3d aurora-text">
             Mapa de centros de salud
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
@@ -125,7 +125,7 @@ function Mapa() {
             <button
               key={centro.nombre}
               onClick={() => setActivo(i)}
-              className={`w-full rounded-xl border p-4 text-left transition-all duration-300 hover:-translate-y-0.5 ${
+              className={`nav-3d w-full rounded-xl border p-4 text-left ${
                 i === activo
                   ? "border-primary/50 bg-primary/10 shadow-[var(--shadow-glow)]"
                   : "border-border bg-card/70 hover:bg-secondary"
@@ -138,7 +138,7 @@ function Mapa() {
           ))}
         </Reveal>
 
-        <Reveal className="glass-card overflow-hidden">
+        <Reveal className="glass-card panel-3d overflow-hidden">
           <iframe
             key={c.nombre}
             title={`Mapa de ${c.nombre}`}
@@ -168,7 +168,7 @@ function Mapa() {
                 </dd>
               </div>
             </dl>
-            <Button asChild className="mt-6 transition-transform hover:scale-105">
+            <Button asChild className="btn-3d mt-6">
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${c.lat},${c.lng}`}
                 target="_blank"

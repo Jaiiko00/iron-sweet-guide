@@ -94,7 +94,7 @@ function Medidor() {
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 lg:grid-cols-2">
           <div className="animate-fade-up">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Sección 2</p>
-            <h1 className="mt-3 font-display text-4xl font-semibold aurora-text">
+            <h1 className="mt-3 font-display text-4xl font-semibold text-3d aurora-text">
               Medidor de anemia
             </h1>
             <p className="mt-4 text-muted-foreground">
@@ -128,7 +128,7 @@ function Medidor() {
           <ul className="mt-5 space-y-3">
             {preguntas.map((p, i) => (
               <li key={p} style={{ animationDelay: `${i * 50}ms` }} className="animate-fade-up">
-                <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-card/60 p-3 text-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary/60">
+                <label className="nav-3d flex cursor-pointer items-start gap-3 rounded-lg border border-border bg-card/60 p-3 text-sm hover:bg-secondary/60">
                   <input
                     type="checkbox"
                     className="mt-0.5 h-4 w-4 accent-[var(--primary)]"

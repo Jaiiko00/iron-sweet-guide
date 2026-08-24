@@ -58,7 +58,7 @@ export function ChatBot() {
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? "Cerrar asistente" : "Abrir asistente virtual"}
-        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full gradient-iron text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:scale-110 active:scale-95"
+        className="btn-3d fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full gradient-iron text-primary-foreground shadow-[var(--shadow-glow)] transition-transform duration-300 hover:scale-110 active:scale-95"
       >
         <span className="absolute inset-0 animate-pulse-ring rounded-full bg-primary/40" />
         {open ? (

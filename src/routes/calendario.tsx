@@ -70,7 +70,7 @@ function Recetario() {
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/30" />
         <div className="relative mx-auto max-w-6xl animate-fade-up px-5 py-20">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Recetario</p>
-          <h1 className="mt-3 font-display text-4xl font-semibold aurora-text">
+          <h1 className="mt-3 font-display text-4xl font-semibold text-3d aurora-text">
             Recetario interactivo para combatir la anemia
           </h1>
           <p className="mt-4 max-w-xl text-muted-foreground">
@@ -119,7 +119,7 @@ function Recetario() {
                   key={ing}
                   onClick={() => toggle(ing)}
                   aria-pressed={on}
-                  className={`rounded-full border px-3.5 py-1.5 text-sm capitalize transition-all duration-300 hover:-translate-y-0.5 ${
+                  className={`nav-3d rounded-full border px-3.5 py-1.5 text-sm capitalize ${
                     on
                       ? "border-transparent gradient-iron text-primary-foreground shadow-[var(--shadow-glow)]"
                       : "border-border bg-card/70 text-muted-foreground hover:bg-secondary"
@@ -265,7 +265,7 @@ function Recetario() {
               <button
                 key={d.day}
                 onClick={() => setDia(i)}
-                className={`rounded-full border px-4 py-2 text-sm transition-all duration-300 hover:-translate-y-0.5 ${
+                className={`nav-3d rounded-full border px-4 py-2 text-sm ${
                   i === dia
                     ? "border-transparent gradient-iron text-primary-foreground shadow-[var(--shadow-glow)]"
                     : "border-border bg-card/70 text-muted-foreground hover:bg-secondary"
