@@ -99,7 +99,7 @@ function Mitos() {
       <section className="border-b border-border/70 bg-gradient-to-br from-secondary/60 to-transparent">
         <div className="mx-auto max-w-6xl animate-fade-up px-5 py-16">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Sección 5</p>
-          <h1 className="mt-3 font-display text-4xl font-semibold text-3d aurora-text">
+          <h1 className="mt-3 font-display text-4xl font-semibold hero-title text-3d aurora-text">
             Mitos y verdades
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
