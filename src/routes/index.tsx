@@ -107,7 +107,7 @@ function Index() {
             <HeartLogo className="h-4 w-4" />
             Sección 1 · Salud con hierro
           </span>
-          <h1 className="mt-5 max-w-3xl animate-fade-up text-3d font-display text-5xl font-semibold leading-[1.05] [animation-delay:100ms] sm:text-6xl">
+          <h1 className="mt-5 max-w-3xl animate-fade-up text-3d font-display text-5xl font-semibold hero-title leading-[1.05] [animation-delay:100ms] sm:text-6xl">
             Entiende la anemia y{" "}
             <span className="aurora-text">recupera tu energía</span>
           </h1>
@@ -145,7 +145,7 @@ function Index() {
       <section className="mx-auto max-w-6xl px-5 py-20">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
-            <h2 className="font-display text-3xl font-semibold">¿Qué es la anemia?</h2>
+            <h2 className="font-display text-3xl font-semibold section-title aurora-text">¿Qué es la anemia?</h2>
             <p className="mt-4 text-muted-foreground">
               La anemia ocurre cuando la sangre no tiene suficientes glóbulos rojos sanos o
               suficiente hemoglobina, la proteína que transporta el oxígeno desde los pulmones
@@ -187,7 +187,7 @@ function Index() {
 
       <section className="bg-secondary/20 py-20 backdrop-blur-sm">
         <div className="mx-auto max-w-6xl px-5">
-          <Reveal as="h2" className="font-display text-3xl font-semibold">
+          <Reveal as="h2" className="font-display text-3xl font-semibold section-title aurora-text">
             Síntomas más frecuentes
           </Reveal>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -207,7 +207,7 @@ function Index() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-20">
-        <Reveal as="h2" className="font-display text-3xl font-semibold">
+        <Reveal as="h2" className="font-display text-3xl font-semibold section-title aurora-text">
           Tipos y causas
         </Reveal>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -226,7 +226,7 @@ function Index() {
       </section>
 
       <section className="mx-auto max-w-3xl px-5 pb-8">
-        <Reveal as="h2" className="font-display text-3xl font-semibold">
+        <Reveal as="h2" className="font-display text-3xl font-semibold section-title aurora-text">
           Preguntas frecuentes
         </Reveal>
         <Reveal className="mt-6">

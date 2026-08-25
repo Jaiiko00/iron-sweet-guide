@@ -70,7 +70,7 @@ function Recetario() {
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/30" />
         <div className="relative mx-auto max-w-6xl animate-fade-up px-5 py-20">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Recetario</p>
-          <h1 className="mt-3 font-display text-4xl font-semibold text-3d aurora-text">
+          <h1 className="mt-3 font-display text-4xl font-semibold hero-title text-3d aurora-text">
             Recetario interactivo para combatir la anemia
           </h1>
           <p className="mt-4 max-w-xl text-muted-foreground">
@@ -163,7 +163,7 @@ function Recetario() {
 
         <Reveal className="mt-10">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h2 className="font-display text-3xl font-semibold">
+            <h2 className="font-display text-3xl font-semibold section-title aurora-text">
               {resultados.length} receta{resultados.length === 1 ? "" : "s"} para ti
             </h2>
             <p className="text-sm text-muted-foreground">
@@ -255,7 +255,7 @@ function Recetario() {
         </Reveal>
 
         <Reveal className="mt-16">
-          <h2 className="font-display text-3xl font-semibold">Calendario semanal variado</h2>
+          <h2 className="font-display text-3xl font-semibold section-title aurora-text">Calendario semanal variado</h2>
           <p className="mt-2 text-sm text-muted-foreground">
             Desayuno, almuerzo y cena distintos para cada día de la semana.
           </p>

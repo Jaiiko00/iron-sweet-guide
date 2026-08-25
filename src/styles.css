@@ -368,6 +368,57 @@
   }
 }
 
+/* Títulos grandes de página */
+@utility hero-title {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  text-wrap: balance;
+  text-shadow:
+    0 1px 0 color-mix(in oklab, var(--foreground) 18%, transparent),
+    0 10px 26px oklch(0.4 0.15 22 / 0.25);
+  animation: title-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Títulos de sección con acento */
+@utility section-title {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  padding-bottom: 0.55rem;
+  text-shadow: 0 6px 18px oklch(0.4 0.15 22 / 0.18);
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    width: 3.5rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, oklch(0.52 0.19 22), oklch(0.66 0.16 60), oklch(0.55 0.12 145));
+    box-shadow: 0 6px 14px -6px oklch(0.5 0.19 22 / 0.7);
+    transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  &:hover::after {
+    width: 6.5rem;
+  }
+}
+
+@keyframes title-in {
+  from {
+    opacity: 0;
+    transform: perspective(900px) translateY(22px) rotateX(10deg);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
 
 @utility hover-lift {
   transition:

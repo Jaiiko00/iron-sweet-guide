@@ -94,7 +94,7 @@ function Medidor() {
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 lg:grid-cols-2">
           <div className="animate-fade-up">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Sección 2</p>
-            <h1 className="mt-3 font-display text-4xl font-semibold text-3d aurora-text">
+            <h1 className="mt-3 font-display text-4xl font-semibold hero-title text-3d aurora-text">
               Medidor de anemia
             </h1>
             <p className="mt-4 text-muted-foreground">
@@ -242,7 +242,7 @@ function Medidor() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 pb-8">
-        <Reveal as="h2" className="font-display text-3xl font-semibold">
+        <Reveal as="h2" className="font-display text-3xl font-semibold section-title aurora-text">
           Cómo se mide la anemia
         </Reveal>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
