@@ -656,3 +656,61 @@
     }
   }
 }
+
+/* ===== Capa extra de animación ===== */
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--primary) 32%, transparent); }
+  50% { box-shadow: 0 0 26px 6px color-mix(in oklab, var(--primary) 22%, transparent); }
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-8deg) scale(1.08); }
+  75% { transform: rotate(8deg) scale(1.08); }
+}
+@keyframes gradient-pan {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(26px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+
+@utility breathe { animation: breathe 3.4s ease-in-out infinite; }
+@utility wiggle-hover { transition: transform 0.3s ease; &:hover { animation: wiggle 0.6s ease-in-out; } }
+@utility zoom-img {
+  overflow: hidden;
+  & img { transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease; }
+  &:hover img { transform: scale(1.08); filter: saturate(1.15); }
+}
+@utility rise-in { animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* Animaciones globales suaves */
+@media (prefers-reduced-motion: no-preference) {
+  main section { animation: rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+  main img { transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease; }
+  main img:hover { transform: scale(1.03); filter: saturate(1.12); }
+
+  button, a[role="button"], [data-slot="button"] {
+    transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+  }
+  button:hover, [data-slot="button"]:hover { transform: translateY(-2px) scale(1.02); }
+  button:active, [data-slot="button"]:active { transform: translateY(1px) scale(0.98); }
+
+  svg { transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
+  button:hover svg, a:hover svg { transform: scale(1.15) rotate(-6deg); }
+
+  .glass-card, .surface-card { transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease; }
+  .glass-card:hover, .surface-card:hover { transform: translateY(-4px); }
+
+  [data-slot="accordion-trigger"] { transition: color 0.25s ease, padding-left 0.3s ease; }
+  [data-slot="accordion-trigger"]:hover { color: var(--primary); padding-left: 0.35rem; }
+
+  input, textarea, select {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+  }
+  input:focus-visible, textarea:focus-visible { transform: translateY(-1px); }
+
+  .aurora-text { animation: aurora 10s ease-in-out infinite; }
+}
