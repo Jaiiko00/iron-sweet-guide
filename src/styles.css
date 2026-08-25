@@ -726,6 +726,24 @@
   from { opacity: 0; transform: translateY(26px) scale(0.97); }
   to { opacity: 1; transform: none; }
 }
+@keyframes btn-glow {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--primary) 30%, transparent); }
+  50% { box-shadow: 0 0 22px 6px color-mix(in oklab, var(--primary) 35%, transparent); }
+}
+@keyframes btn-pop {
+  0% { opacity: 0; transform: scale(0.6) translateY(12px); }
+  60% { opacity: 1; transform: scale(1.08) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes btn-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes btn-shine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
 
 @utility breathe { animation: breathe 3.4s ease-in-out infinite; }
 @utility wiggle-hover { transition: transform 0.3s ease; &:hover { animation: wiggle 0.6s ease-in-out; } }
