@@ -19,7 +19,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 animate-fade-in border-b border-border/70 bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-3 px-5 py-3">
         <Link to="/" className="group flex items-center gap-2">
-          <HeartLogo className="h-9 w-9 icon-3d" />
+          <HeartLogo className="h-9 w-9 icon-3d wiggle-hover" />
           <span className="font-display text-xl font-semibold aurora-text">NutriHierro</span>
         </Link>
         <nav className="flex flex-1 flex-wrap items-center gap-1 text-sm">
