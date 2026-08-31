@@ -60,32 +60,41 @@ const tipos = [
 const faqs = [
   {
     q: "¿La anemia se cura?",
-    a: "La anemia por falta de hierro suele corregirse en 2 a 4 meses con alimentación adecuada y, cuando el médico lo indica, suplementos de hierro. Lo importante es tratar también la causa (por ejemplo sangrados o parásitos).",
+    a: "La anemia por falta de hierro suele mejorar con buena alimentación y el tratamiento indicado por un profesional.",
   },
   {
     q: "¿Cómo se diagnostica?",
-    a: "Con un análisis de sangre: hemoglobina, hematocrito y ferritina. Un valor bajo de hemoglobina confirma la anemia y la ferritina indica cuánto hierro tienes de reserva.",
+    a: "Con un análisis de sangre que mide hemoglobina y, cuando es necesario, ferritina.",
   },
   {
     q: "¿Qué alimentos aportan más hierro?",
-    a: "Hierro hemo (se absorbe mejor): sangrecita, hígado, bazo, carne roja, pescado. Hierro no hemo: lentejas, frejoles, garbanzos, espinaca, quinua, semillas de zapallo.",
+    a: "Sangrecita, hígado, carnes, pescado, lentejas, frejoles, garbanzos y quinua.",
   },
   {
     q: "¿Por qué me recomiendan tomar jugo de naranja con las comidas?",
-    a: "La vitamina C puede triplicar la absorción del hierro vegetal. Limón, naranja, pimiento rojo, brócoli o kiwi son buenos acompañantes.",
+    a: "Porque su vitamina C ayuda al cuerpo a aprovechar mejor el hierro vegetal.",
   },
   {
     q: "¿Qué cosas bloquean la absorción del hierro?",
-    a: "El café, el té, las infusiones y la leche tomados junto a la comida. Sepáralos al menos una hora de tu plato principal.",
+    a: "El café, té y exceso de leche junto a la comida. Consúmelos una hora después.",
   },
   {
     q: "¿Quiénes tienen más riesgo?",
-    a: "Niños menores de 3 años, adolescentes, mujeres con menstruaciones abundantes, gestantes, personas vegetarianas sin planificación y adultos mayores.",
+    a: "Niños, adolescentes, gestantes, adultos mayores y personas con pérdidas de sangre o dietas poco variadas.",
   },
   {
     q: "¿Puedo tomar suplementos por mi cuenta?",
     a: "No es recomendable. El exceso de hierro también daña. Un profesional de salud debe indicar la dosis según tu análisis.",
   },
+];
+
+const alimentos = [
+  { icono: "🥩", nombre: "Carne e hígado", detalle: "Hierro fácil de absorber", tono: "bg-primary/10 text-primary" },
+  { icono: "🐟", nombre: "Pescado", detalle: "Práctico para el almuerzo", tono: "bg-leaf/10 text-leaf" },
+  { icono: "🥚", nombre: "Huevo", detalle: "Ideal para desayuno o cena", tono: "bg-accent text-accent-foreground" },
+  { icono: "🥣", nombre: "Lentejas y frejoles", detalle: "Económicos y rendidores", tono: "bg-secondary text-secondary-foreground" },
+  { icono: "🌿", nombre: "Espinaca", detalle: "Úsala en tortilla o ensalada", tono: "bg-leaf/10 text-leaf" },
+  { icono: "🍊", nombre: "Naranja y limón", detalle: "Ayudan a absorber el hierro", tono: "bg-primary/10 text-primary" },
 ];
 
 function Index() {
@@ -112,8 +121,7 @@ function Index() {
             <span className="aurora-text">recupera tu energía</span>
           </h1>
           <p className="mt-5 max-w-xl animate-fade-up text-lg text-muted-foreground [animation-delay:200ms]">
-            NutriHierro reúne información confiable sobre la anemia, un medidor de riesgo, un
-            recetario interactivo, el mapa de centros de salud y mitos y verdades.
+            Aprende a prevenir la anemia con información clara, recetas y herramientas prácticas.
           </p>
           <div className="mt-8 flex animate-fade-up flex-wrap gap-3 [animation-delay:300ms]">
             <Button asChild size="lg" className="btn-3d breathe shine gradient-iron text-primary-foreground shadow-[var(--shadow-glow)]">
@@ -142,20 +150,66 @@ function Index() {
         </div>
       </section>
 
+      <section className="border-y border-border/70 bg-card/45 py-16 backdrop-blur-sm">
+        <div className="mx-auto max-w-6xl px-5">
+          <Reveal>
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Para tu día a día</p>
+            <h2 className="mt-2 font-display text-3xl font-semibold section-title aurora-text">
+              Alimentos ricos en hierro
+            </h2>
+            <p className="mt-3 max-w-2xl text-muted-foreground">
+              Opciones conocidas y fáciles de combinar en casa o en la lonchera.
+            </p>
+          </Reveal>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {alimentos.map((alimento, i) => (
+              <Reveal key={alimento.nombre} delay={i * 60}>
+                <Tilt3D max={8} className="h-full rounded-xl">
+                  <article className="glass-card card-3d flex h-full items-center gap-4 p-4">
+                    <span className={`grid h-14 w-14 shrink-0 place-items-center rounded-xl text-3xl ${alimento.tono}`} aria-hidden>
+                      {alimento.icono}
+                    </span>
+                    <div>
+                      <h3 className="font-display text-lg font-semibold">{alimento.nombre}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">{alimento.detalle}</p>
+                    </div>
+                  </article>
+                </Tilt3D>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mt-6 overflow-hidden rounded-xl border border-border bg-card/70">
+            <div className="grid md:grid-cols-[0.9fr_1.1fr]">
+              <img
+                src={heroFoods}
+                alt="Carnes, menestras, espinaca y cítricos ricos en hierro"
+                width={1600}
+                height={1000}
+                loading="lazy"
+                className="h-48 w-full object-cover md:h-full"
+              />
+              <div className="p-6">
+                <h3 className="font-display text-xl font-semibold">La combinación ganadora</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Une lentejas, frejoles o espinaca con naranja, limón, tomate o pimiento. La vitamina C ayuda a aprovechar mejor el hierro.
+                </p>
+                <p className="mt-4 text-sm font-medium text-primary">Ejemplo: lentejas + ensalada de tomate + limonada.</p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-6xl px-5 py-20">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
             <h2 className="font-display text-3xl font-semibold section-title aurora-text">¿Qué es la anemia?</h2>
             <p className="mt-4 text-muted-foreground">
-              La anemia ocurre cuando la sangre no tiene suficientes glóbulos rojos sanos o
-              suficiente hemoglobina, la proteína que transporta el oxígeno desde los pulmones
-              hacia todo el cuerpo. Con menos oxígeno disponible, los órganos y los músculos
-              trabajan con dificultad y aparece el cansancio.
+              La anemia aparece cuando la sangre no transporta suficiente oxígeno. Por eso puede
+              causar cansancio, palidez y falta de concentración.
             </p>
             <p className="mt-4 text-muted-foreground">
-              La causa más frecuente es la falta de hierro, un mineral que el cuerpo no fabrica y
-              que obtenemos únicamente a través de los alimentos. Por eso la alimentación es la
-              primera herramienta de tratamiento y prevención.
+              La causa más común es la falta de hierro, un mineral que obtenemos de los alimentos.
             </p>
             <dl className="mt-8 grid gap-4 sm:grid-cols-3">
               {[

@@ -98,9 +98,7 @@ function Medidor() {
               Medidor de anemia
             </h1>
             <p className="mt-4 text-muted-foreground">
-              Este medidor combina tus síntomas con tu último valor de hemoglobina para estimar un
-              nivel de riesgo. Es una guía educativa: solo un análisis de sangre y un profesional
-              de salud pueden dar un diagnóstico.
+              Estima tu riesgo con tus síntomas y hemoglobina. Es una guía educativa, no un diagnóstico.
             </p>
           </div>
           <Tilt3D max={10} className="rounded-2xl">
@@ -213,7 +211,7 @@ function Medidor() {
               ))}
             </dl>
             <p className="mt-4 text-xs text-muted-foreground">
-              Valores de referencia a nivel del mar; en altura los umbrales se ajustan hacia arriba.
+              En zonas de altura, los valores de referencia cambian.
             </p>
           </Reveal>
         </div>

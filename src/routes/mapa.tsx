@@ -112,9 +112,7 @@ function Mapa() {
             Mapa de centros de salud
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Postas, centros de salud y hospitales cerca de El Rosario y Los Aquijes (Ica, Perú)
-            donde puedes hacerte el descarte de anemia, recoger sulfato ferroso y recibir
-            orientación nutricional.
+            Encuentra atención, análisis de hemoglobina y orientación nutricional cerca de Los Aquijes.
           </p>
         </div>
       </section>
@@ -178,8 +176,7 @@ function Mapa() {
               </a>
             </Button>
             <p className="mt-4 text-xs text-muted-foreground">
-              Las ubicaciones son referenciales. Confirma horarios llamando al establecimiento o en
-              la municipalidad de Los Aquijes antes de acudir.
+              Ubicaciones referenciales. Confirma el horario antes de acudir.
             </p>
           </div>
         </Reveal>

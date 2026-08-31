@@ -33,28 +33,28 @@ const SEED: Comment[] = [
   {
     id: "s1",
     author: "Marisol",
-    text: "Mi hija salió con hemoglobina baja y empezamos con sangrecita dos veces por semana más limonada. En tres meses subió 1.8 puntos. ¡Sí funciona la constancia!",
+    text: "Con seguimiento médico y comidas con hierro, mi hija mejoró. La constancia fue clave.",
     date: "hace 3 días",
     likes: 24,
   },
   {
     id: "s2",
     author: "Dr. Ramírez",
-    text: "Recuerden separar el café y el té al menos una hora de las comidas principales: son los mayores bloqueadores de la absorción del hierro.",
+    text: "Recuerden tomar café o té al menos una hora después de las comidas.",
     date: "hace 5 días",
     likes: 41,
   },
   {
     id: "s3",
     author: "Kevin",
-    text: "Soy vegetariano y pensé que no podría. Lentejas + pimiento rojo + semillas de zapallo me cambiaron el nivel de energía por completo.",
+    text: "Me funciona combinar lentejas, pimiento rojo y semillas de zapallo.",
     date: "hace 1 semana",
     likes: 18,
   },
   {
     id: "s4",
     author: "Ana Lucía",
-    text: "¿Alguien más sintió molestias al tomar el suplemento de hierro? A mí me ayudó tomarlo después del almuerzo y no en ayunas.",
+    text: "¿Alguien más sintió molestias con el suplemento de hierro?",
     date: "hace 2 semanas",
     likes: 12,
   },
@@ -114,8 +114,7 @@ function Comunidad() {
             Comunidad y debate
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Un espacio para compartir experiencias, resolver dudas y animarse mutuamente. Escribe con
-            respeto: aquí nadie diagnostica, solo acompañamos.
+            Comparte experiencias y dudas con respeto. Este espacio acompaña, no diagnostica.
           </p>
         </div>
       </section>
