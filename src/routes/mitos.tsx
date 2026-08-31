@@ -103,8 +103,7 @@ function Mitos() {
             Mitos y verdades
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Alrededor de la anemia circulan muchas creencias. Toca cada tarjeta para ver si es mito
-            o verdad y por qué.
+            Toca una tarjeta y descubre si la afirmación es mito o verdad.
           </p>
         </div>
       </section>

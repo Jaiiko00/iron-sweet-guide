@@ -74,9 +74,7 @@ function Recetario() {
             Recetario interactivo para combatir la anemia
           </h1>
           <p className="mt-4 max-w-xl text-muted-foreground">
-            Marca lo que tienes en casa y el filtro inteligente te arma al instante recetas
-            económicas, nutritivas y rápidas. Abajo encontrarás además un calendario semanal muy
-            variado.
+            Elige tus ingredientes y encuentra recetas rápidas, económicas y nutritivas.
           </p>
         </div>
       </section>
@@ -257,7 +255,7 @@ function Recetario() {
         <Reveal className="mt-16">
           <h2 className="font-display text-3xl font-semibold section-title aurora-text">Calendario semanal variado</h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Desayuno, almuerzo y cena distintos para cada día de la semana.
+              Tres ideas sencillas para cada día.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2">

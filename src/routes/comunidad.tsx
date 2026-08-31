@@ -114,8 +114,7 @@ function Comunidad() {
             Comunidad y debate
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            Un espacio para compartir experiencias, resolver dudas y animarse mutuamente. Escribe con
-            respeto: aquí nadie diagnostica, solo acompañamos.
+            Comparte experiencias y dudas con respeto. Este espacio acompaña, no diagnostica.
           </p>
         </div>
       </section>
