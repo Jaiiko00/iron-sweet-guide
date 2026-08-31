@@ -27,26 +27,22 @@ const items: Item[] = [
   {
     afirmacion: "La beterraga cura la anemia porque es de color rojo.",
     esVerdad: false,
-    explicacion:
-      "La beterraga aporta muy poco hierro. Ayuda por su vitamina C y folatos, pero no reemplaza alimentos como sangrecita, hígado o carnes rojas.",
+    explicacion: "Aporta folatos, pero poco hierro. No reemplaza carnes, hígado o sangrecita.",
   },
   {
     afirmacion: "El hierro de la carne se absorbe mucho mejor que el de las plantas.",
     esVerdad: true,
-    explicacion:
-      "El hierro hemo (carnes, vísceras, sangrecita) se absorbe entre 15% y 35%; el hierro no hemo de vegetales apenas 2% a 10%.",
+    explicacion: "El cuerpo aprovecha mejor el hierro de carnes y vísceras que el de los vegetales.",
   },
   {
     afirmacion: "Tomar café o té con las comidas no afecta el hierro.",
     esVerdad: false,
-    explicacion:
-      "Los taninos y polifenoles del café, té e infusiones pueden reducir hasta 60% la absorción del hierro. Espera al menos una hora.",
+    explicacion: "Café y té dificultan la absorción. Espera una hora después de comer.",
   },
   {
     afirmacion: "La vitamina C mejora la absorción del hierro vegetal.",
     esVerdad: true,
-    explicacion:
-      "Limón, naranja, pimiento o tomate junto a lentejas o espinaca pueden multiplicar hasta por tres el hierro que aprovechas.",
+    explicacion: "Combina menestras o verduras con limón, naranja, tomate o pimiento.",
   },
   {
     afirmacion: "Si me siento bien, no puedo tener anemia.",
@@ -57,32 +53,27 @@ const items: Item[] = [
   {
     afirmacion: "La leche en exceso puede favorecer la anemia en niños.",
     esVerdad: true,
-    explicacion:
-      "El calcio compite con el hierro y un consumo muy alto de leche desplaza alimentos ricos en hierro de la dieta.",
+    explicacion: "Demasiada leche puede desplazar otros alimentos y dificultar el aprovechamiento del hierro.",
   },
   {
     afirmacion: "Los suplementos de hierro se pueden tomar sin control médico.",
     esVerdad: false,
-    explicacion:
-      "El exceso de hierro es tóxico para el hígado. La dosis y duración las indica el personal de salud según tu hemoglobina.",
+    explicacion: "Un profesional debe indicar la dosis según tus análisis.",
   },
   {
     afirmacion: "La sangrecita es uno de los alimentos con más hierro disponible.",
     esVerdad: true,
-    explicacion:
-      "Aporta alrededor de 29 mg de hierro por 100 g, es barata y se absorbe muy bien; por eso se promueve en programas contra la anemia.",
+    explicacion: "Es económica, aporta mucho hierro y el cuerpo lo absorbe bien.",
   },
   {
     afirmacion: "La anemia solo le da a los niños.",
     esVerdad: false,
-    explicacion:
-      "También afecta a gestantes, mujeres con menstruaciones abundantes, adultos mayores, deportistas y personas con dietas restrictivas.",
+    explicacion: "También afecta a adolescentes, gestantes, adultos mayores y personas con dietas poco variadas.",
   },
   {
     afirmacion: "Cocinar en olla de hierro puede aportar algo de hierro a la comida.",
     esVerdad: true,
-    explicacion:
-      "Sobre todo en preparaciones ácidas y de cocción larga, como guisos con tomate; es un aporte pequeño pero real.",
+    explicacion: "Puede aportar una pequeña cantidad, sobre todo en guisos con tomate.",
   },
 ];
 
